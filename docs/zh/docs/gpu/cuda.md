@@ -280,6 +280,10 @@ int main() {
 
 *Image source: https://developer.nvidia.com/blog/cuda-refresher-cuda-programming-model/*
 
+![cuda-kernel-index.png](images/cuda/cuda-kernel-index.png)
+
+*Image source: https://developer.nvidia.com/blog/even-easier-introduction-cuda*
+
 在启动 CUDA Kernel 时，`<<<>>>` 中的第一个数字是每一个 Grid 中的 Block 数量，第二个数字是每一个 Block 中的 Thread 数量（每一个 Block 中含有的 Thread 数量是相等的）。比如：
 
 ```cpp
