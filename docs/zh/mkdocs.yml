@@ -92,8 +92,7 @@ nav:
     - parallel-programming/mpi4py.md
   - 性能分析:
     - performance-analysis/intro.md
-    - performance-analysis/basics.md
-    - performance-analysis/vtune.md
+    - performance-analysis/tools.md
     - performance-analysis/nsys.md
 - GPU编程:
   - gpu/intro.md
