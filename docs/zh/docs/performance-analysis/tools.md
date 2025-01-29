@@ -95,7 +95,10 @@ vtune -report summary -r result
 
     - [AMD uProf User Guide](https://docs.amd.com/go/en-US/57368-uProf-user-guide)
 
-μProf 是 AMD 提供的一款性能分析工具，支持 Windows 和 Linux 系统。其使用方法和界面都与 VTune 类似。
+μProf 是 AMD 提供的一款性能分析工具，支持 Windows 和 Linux 系统。它提供两个 Profiler：
+
+- AMDuProf、AMDuProfCLI：图形界面和命令行界面，使用方法和界面都与 VTune 类似。
+- AMDuProfPcm：不常用，偏硬件底层，收集的指标如 IPC、内存带宽、CPU 发射槽等，输出原始 CSV 数据。可以绘制 roofline 测浮点数性能瓶颈。
 
 ```bash
 AMDuProfCLI collect --config hotspots -o <output-dir> <application>

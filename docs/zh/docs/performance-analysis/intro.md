@@ -104,3 +104,28 @@ Utilization (%),System time (%),User time (%),System instructions (%),User instr
 - **事件采样**：在程序中插入采样点。当程序执行到采样点时，工具会记录当前程序的状态。
 
 采样的信息包括指令地址、进程和线程 ID、调用栈等。通过分析这些采样信息，性能分析工具生成火焰图、时间线等报告。
+
+### 并行编程框架
+
+!!! quote "参考资料"
+
+    - [Score-P: Introduction](https://scorepci.pages.jsc.fz-juelich.de/scorep-pipelines/docs/scorep-6.0/html/index.html)
+
+- **MPI**：MPI 标准提供了调试接口 PMPI。MPI 的任何函数都能使用 PMPI 版本进行调用，PMPI 版本会执行真的代码，而你可以自己覆盖 MPI 并添加一些东西，再调用 PMPI 版本，从而实现注入。下面的例子修改了 `MPI_Send` 函数进行监测：
+
+    ```c
+    int MPI_Send(const void* buffer, int count, MPI_Datatype datatype,
+                int dest, int tag, MPI_Comm comm) {
+        int size;
+        printf("Sending ...\n");
+
+        int result = PMPI_Send(buffer, count, datatype, dest, tag, comm);
+        MPI_Type_size(datatype, &size);
+        totalBytes += count*size;
+
+        return result;
+    }
+    ```
+
+- **OpenMP**：可以使用使用现有的库 Opari2，它在 OpenMP 指令周围添加监测器的调用。
+- **CUDA**：使用 NVIDIA 提供的 CUPTI 性能分析接口。
