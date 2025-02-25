@@ -93,7 +93,6 @@ nav:
   - 性能分析:
     - performance-analysis/intro.md
     - performance-analysis/tools.md
-    - performance-analysis/nsys.md
 - GPU编程:
   - gpu/intro.md
   - gpu/arch.md

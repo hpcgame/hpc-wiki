@@ -80,9 +80,7 @@ vtune -report summary -r result
 
 完成命令行收集后，就可以在有图形化界面的环境下使用 VTune Profiler 打开查看可视化结果。
 
-<figure markdown="span">
 ![vtune](images/tools/vtune.png)
-</figure>
 
 ## AMD 平台：[μProf](https://www.amd.com/en/developer/uprof.html)
 
@@ -100,9 +98,7 @@ AMDuProfCLI collect --config hotspots -o <output-dir> <application>
 AMDuProfCLI report -i <session directory>
 ```
 
-<figure markdown="span">
-![uprof](images/intro/uprof.jpg)
-</figure>
+![uprof](images/tools/uprof.jpg)
 
 ## NVIDIA 平台：[Nsight](https://developer.nvidia.com/nsight-developer-tools)
 
@@ -125,10 +121,8 @@ nsys profile ./a.out
 ncu -o profile ./a.out
 ```
 
-<figure markdown="span">
-![nsys](images/tools/nsys.png){ width=50% style="float: left; " }
-![ncu](images/tools/ncu.png){ width=50% style="float: right; }
-</figure>
+![nsys](images/tools/nsys.png)
+![ncu](images/tools/ncu.png)
 
 ## [POP](https://pop-coe.eu/)
 
