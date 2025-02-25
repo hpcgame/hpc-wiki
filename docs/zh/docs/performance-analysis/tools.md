@@ -81,12 +81,7 @@ vtune -report summary -r result
 完成命令行收集后，就可以在有图形化界面的环境下使用 VTune Profiler 打开查看可视化结果。
 
 <figure markdown="span">
-  ![vtune](images/intro/vtune.png)
-  <figcaption>
-    <small>
-    来源：<a href="https://www.intel.com/content/www/us/en/docs/vtune-profiler/user-guide/2024-2/standalone-ui.html">Intel® VTune™ Profiler Graphical User Interface</a>
-    </small>
-  </figcaption>
+![vtune](images/tools/vtune.png)
 </figure>
 
 ## AMD 平台：[μProf](https://www.amd.com/en/developer/uprof.html)
@@ -106,12 +101,33 @@ AMDuProfCLI report -i <session directory>
 ```
 
 <figure markdown="span">
-  ![uprof](images/intro/uprof.jpg)
-  <figcaption>
-    <small>
-    来源：<a href="https://docs.amd.com/r/en-US/57368-uProf-user-guide/Overview-of-Performance-Hotspots">Overview of Performance Hotspots • uProf User Guide 5.0 • Reader • AMD Technical Information Portal</a>
-    </small>
-  </figcaption>
+![uprof](images/intro/uprof.jpg)
+</figure>
+
+## NVIDIA 平台：[Nsight](https://developer.nvidia.com/nsight-developer-tools)
+
+!!! quote "参考资料"
+
+    - [Nsight Systems Documentation](https://docs.nvidia.com/nsight-systems/)
+    - [Nsight Compute Documentation](https://docs.nvidia.com/nsight-compute/)
+
+| 工具名称 | 命令行 | 主要功能 |
+|---|---|---|
+| [Nsight Systems](https://developer.nvidia.com/nsight-systems) | `nsys` | CPU 和 GPU，系统级性能分析工具 |
+| [Nsight Compute](https://developer.nvidia.com/nsight-compute) | `ncu` | CUDA，提供详细性能指标和 API 调试功能 |
+
+!!! tip "Nsight 是为数不多的持续支持使用 macOS 客户端进行远程调试和分析的性能工具。"
+
+```bash
+# Nsight Systems
+nsys profile ./a.out
+# Nsight Compute
+ncu -o profile ./a.out
+```
+
+<figure markdown="span">
+![nsys](images/tools/nsys.png){ width=50% style="float: left; " }
+![ncu](images/tools/ncu.png){ width=50% style="float: right; }
 </figure>
 
 ## [POP](https://pop-coe.eu/)
@@ -127,9 +143,10 @@ Performance Optimisation and Productivity（POP）是欧洲的一个 HPC 项目�
 - Cube：分析、可视化
 
 <figure markdown="span">
-  ![pop](images/intro/pop.png)
+  ![pop](images/tools/pop.png)
   <figcaption>
     POP 工作流
+    <br><small>
   </figcaption>
 </figure>
 
